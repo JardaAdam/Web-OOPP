@@ -1,0 +1,143 @@
+/* Resetování základních stylů */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Styl pro hlavičku */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .left-header, header .center-header, header .right-header {
+    flex: 1;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+header .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+header .login-form input,
+header .login-form button {
+    padding: 10px;
+    margin: 5px;
+}
+
+header .login-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+header .login-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Hlavní obsah */
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Sekce pro revize a optimalizace */
+.revize, .optimalizace {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.revize .image-left, .optimalizace .image-right {
+    width: 100%;
+}
+
+.revize img, .optimalizace img {
+    width: 100%;
+    height: auto;
+}
+
+/* Textové sekce */
+.text-left, .text-right {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Kalkulačka */
+.calculator {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responzivní design pro mobilní zařízení */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .revize, .optimalizace {
+        width: 100%;
+    }
+
+    .revize .image-left, .optimalizace .image-right {
+        width: 100%;
+    }
+
+    .text-left, .text-right {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Responzivní design pro tablety a větší obrazovky */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .revize, .optimalizace {
+        width: 48%;
+    }
+}

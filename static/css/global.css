@@ -1,0 +1,125 @@
+/* Resetování základních stylů */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Styl pro hlavičku */
+header {
+    display: flex;
+    justify-content: space-between; /* Vytváří prostor mezi levým, středním a pravým blokem */
+    align-items: center;
+    padding: 1.25rem;
+    background-color: #5722ac;
+    background-image: url('path_to_your_image.jpg'); /* Cesta k obrázku pozadí */
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0.125rem 0.3125rem rgba(107, 26, 26, 0.1);
+}
+
+/* Styly pro části hlavičky */
+header .left-header,
+header .center-header,
+header .right-header {
+    flex: 1;
+    text-align: center;
+}
+
+/* Střední část hlavičky */
+header .center-header {
+    color: #28a745;
+}
+
+/* Styl pro hlavní nadpis */
+header h1 {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+/* Pravá část hlavičky pro přihlášení a registraci */
+header .right-header {
+    display: flex;
+    flex-direction: column; /* Tlačítka budou pod sebou */
+    align-items: flex-end; /* Zarovná tlačítka doprava */
+    gap: 1rem; /* Mezery mezi tlačítky */
+}
+
+/* Tlačítka */
+header button {
+    padding: 0.625rem;
+    margin: 0.3125rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 50%; /* Tlačítka vyplní šířku */
+    transition: background-color 0.3s ease;
+}
+
+/* Tlačítko pro přihlášení */
+header #login-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+header #login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Tlačítko pro registraci */
+header #register-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+header #register-btn:hover {
+    background-color: #218838;
+}
+
+/* Responzivní design pro mobilní zařízení */
+@media (max-width: 48rem) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    /* Úpravy pro revize a optimalizace */
+    .revize, .optimalizace {
+        width: 100%;
+    }
+
+    .revize .image-left, .optimalizace .image-right {
+        width: 100%;
+    }
+
+    .text-left, .text-right {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Responzivní design pro tablety a větší obrazovky */
+@media (min-width: 48rem) and (max-width: 64rem) {
+    .revize, .optimalizace {
+        width: 48%;
+    }
+}
+
+/* Patička */
+footer {
+    text-align: center;
+    padding: 0.625rem;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+}

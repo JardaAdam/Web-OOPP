@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poptávka na Technickou konzultaci</title>
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/consultation-form.css">
+</head>
+<body>
+    <header>
+        <h1>Poptávka na konzultaci</h1>
+        <p>Prosím, vyplňte formulář níže a přiložte fotografie, které mohou být pro konzultaci užitečné.</p>
+    </header>
+
+    <main>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="name">Jméno:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="description">Popis projektu nebo problému:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="photos">Přiložit fotografie:</label>
+            <input type="file" id="photos" name="photos" multiple accept="image/*">
+
+            <button type="submit">Odeslat poptávku</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Revize OOPP a Technické konzultace</p>
+    </footer>
+</body>
+</html>

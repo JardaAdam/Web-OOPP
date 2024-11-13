@@ -1,0 +1,25 @@
+muj-web/                          # Kořenová složka projektu
+├── manage.py                     # Skript pro správu Django projektu
+├── requirements.txt              # Seznam závislostí pro projekt
+├── myproject/                    # Hlavní Django projekt (obsahuje nastavení a konfigurace)
+│   ├── __init__.py
+│   ├── settings.py               # Nastavení pro celý projekt
+│   ├── urls.py                   # URL routing pro projekt
+│   └── wsgi.py                   # WSGI konfigurace pro nasazení
+├── myapp/                        # Django aplikace, např. pro správu uživatelů
+│   ├── __init__.py
+│   ├── models.py                 # Modely pro aplikaci
+│   ├── views.py                  # View funkce pro aplikaci
+│   ├── urls.py                   # URL routing pro aplikaci
+│   └── migrations/               # Složka pro migrace databáze
+├── static/                       # Statické soubory pro frontend (CSS, JS, obrázky)
+│   ├── css/                      # CSS soubory
+│   ├── js/                       # JavaScript soubory
+│   ├── images/                   # Obrázky
+│   └── fonts/                    # Fonty
+├── templates/                    # HTML soubory
+│   ├── base.html                 # Základní šablona pro všechny stránky
+│   ├── index.html                # Domovská stránka
+│   ├── login.html                # Přihlašovací stránka
+│   └── register.html             # Registrační stránka
+└── db.sqlite3                    # SQLite databáze (pokud používáte SQLite, jinak použijete jinou DB)
