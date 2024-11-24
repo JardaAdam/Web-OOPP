@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Revize OOPP{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
+
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
 </head>
 <body>
 <header>
@@ -25,17 +27,19 @@
 </header>
 
 <!-- Navigační lišta -->
+<!-- Navigační lišta -->
 <nav class="navbar">
     <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Domů</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'revize' %}">Revize OOPP</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'optimalizace' %}">Optimalizace pracovních postupů</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'kontakt' %}">Kontakt</a></li>
+        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Domů</a></li>
+        <li class="nav-item"><a href="{% url 'revize' %}" class="nav-link">Revize OOPP</a></li>
+        <li class="nav-item"><a href="{% url 'optimalizace' %}" class="nav-link">Optimalizace pracovních postupů</a></li>
+        <li class="nav-item"><a href="{% url 'kontakt' %}" class="nav-link">Kontakt</a></li>
     </ul>
 </nav>
 
-<main>
 
+<main>
+    {% block content %}{% endblock %}
 </main>
 
 <footer>
