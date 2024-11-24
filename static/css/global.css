@@ -5,144 +5,111 @@
     box-sizing: border-box;
 }
 
-/* Nastavení pozadí pro navbar */
-.navbar {
-    background-color: black; /* Změň na požadovanou barvu pozadí */
-    padding: 1rem 0; /* Odsazení okolo celého navbaru */
-}
-
-/* Odsazení prvního tlačítka v navbaru */
-.navbar-nav .nav-item:first-child {
-    margin-left: 2rem; /* Odsazení první položky */
-}
-
-/* Aktivní stav tlačítka (při najetí myší) */
-.nav-item.nav-link:hover {
-    background-color: #555; /* Barva pozadí při najetí myší */
-    color: #fff; /* Změna barvy textu při najetí myší */
-}
-
-/* Aktivní tlačítko (při kliknutí) */
-.nav-item.nav-link.active {
-    color: #ff5733; /* Barva textu pro aktivní položku */
-    font-weight: bold; /* Tučný text pro aktivní položku */
-}
-
+/* Styl pro tělo stránky */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    margin-top: 120px; /* Umožní zobrazit navbar nad obsahem */
 }
 
 /* Styl pro hlavičku */
 header {
     display: flex;
-    justify-content: space-between; /* Vytváří prostor mezi levým, středním a pravým blokem */
+    justify-content: space-between;
     align-items: center;
     padding: 1.25rem;
     background-color: #5722ac;
-    background-image: url('path_to_your_image.jpg'); /* Cesta k obrázku pozadí */
+    background-image: url('path_to_your_image.jpg');
     background-size: cover;
     background-position: center center;
     box-shadow: 0 0.125rem 0.3125rem rgba(107, 26, 26, 0.1);
 }
 
-/* Styly pro části hlavičky */
-header .left-header,
-header .center-header,
-header .right-header {
+header .left-header, header .center-header, header .right-header {
     flex: 1;
     text-align: center;
-}
-
-/* Střední část hlavičky */
-header .center-header {
-    color: #28a745;
-}
-
-/* Styl pro hlavní nadpis */
-header h1 {
-    font-size: 2rem;
-    color: #007bff;
 }
 
 /* Pravá část hlavičky pro přihlášení a registraci */
 header .right-header {
     display: flex;
-    flex-direction: column; /* Tlačítka budou pod sebou */
-    align-items: flex-end; /* Zarovná tlačítka doprava */
-    gap: 1rem; /* Mezery mezi tlačítky */
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
 }
 
-/* Tlačítka */
-header button {
-    padding: 0.625rem;
-    margin: 0.3125rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 50%; /* Tlačítka vyplní šířku */
-    transition: background-color 0.3s ease;
-}
-
-/* Tlačítko pro přihlášení */
-header #login-btn {
+/* Navbar */
+.navbar {
     background-color: #007bff;
-    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Přidání stínu pro lepší vzhled */
 }
 
-header #login-btn:hover {
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 1rem;
+}
+
+.nav-item .nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover efekt pro položky v navbaru */
+.nav-item .nav-link:hover {
     background-color: #0056b3;
+    color: #fff;
 }
 
-/* Tlačítko pro registraci */
-header #register-btn {
+/* Aktivní stav položky */
+.nav-item .nav-link.active {
     background-color: #28a745;
     color: white;
 }
 
-header #register-btn:hover {
-    background-color: #218838;
+/* Responzivní navbar pro mobilní zařízení */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .navbar-toggler {
+        border: none;
+        background-color: transparent;
+    }
+
+    .navbar-toggler-icon {
+        background-color: #fff;
+    }
 }
 
-/* Responzivní design pro mobilní zařízení */
 @media (max-width: 48rem) {
     header {
         flex-direction: column;
         align-items: center;
     }
-    
-    .content-wrapper {
-        flex-direction: column;
-    }
-
-    /* Úpravy pro revize a optimalizace */
-    .revize, .optimalizace {
-        width: 100%;
-    }
-
-    .revize .image-left, .optimalizace .image-right {
-        width: 100%;
-    }
-
-    .text-left, .text-right {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* Responzivní design pro tablety a větší obrazovky */
-@media (min-width: 48rem) and (max-width: 64rem) {
-    .revize, .optimalizace {
-        width: 48%;
-    }
-}
-
-/* Patička */
-footer {
-    text-align: center;
-    padding: 0.625rem;
-    background-color: #f8f9fa;
-    font-size: 0.9rem;
 }

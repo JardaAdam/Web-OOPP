@@ -18,13 +18,15 @@ from django.contrib import admin
 from django.urls import path
 
 from viewer import views
-from viewer.views import home, revize
+from viewer.views import revize, optimalizace, kontakt, home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', home, name='home'),
-    path('', views.home, name='index'),
+path('', home, name='home'),
     path('revize/', revize, name='revize'),
+    path('optimalizace/', optimalizace, name='optimalizace'),
+    path('kontakt/', kontakt, name='kontakt'),
+
 
 ]
