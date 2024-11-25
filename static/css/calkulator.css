@@ -1,0 +1,107 @@
+/* Obecné nastavení pro sekci kalkulačky a obrázku */
+.calculator-section {
+    display: flex; /* Flexbox pro uspořádání kalkulačky a pravé sekce */
+    gap: 2rem; /* Mezera mezi kalkulačkou a pravou sekcí */
+    margin-top: 2rem; /* Odstup od horní části sekce */
+    align-items: flex-start; /* Zarovnání prvků nahoře */
+}
+
+/* Kalkulačka vlevo */
+.calculator {
+    flex: 1; /* Kalkulačka zabere více místa */
+    padding: 1rem;
+}
+
+/* Tabulka kalkulačky */
+#calculatorTable {
+    width: 48%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+#calculatorTable th,
+#calculatorTable td {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Tato část může být přesunuta do global.css */
+.price,
+#totalPrice {
+    font-weight: bold;
+}
+
+/* Pole pro počet kusů */
+#calculatorTable input[type="number"] {
+    width: 70%;
+    max-width: 5rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#calculatorTable td .unit {
+    display: inline-block;
+    width: 20%;
+    text-align: left;
+    padding-left: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Pravá sekce: obrázek a text */
+.info-right {
+    flex: 1; /* Pravá sekce zabere zbylé místo */
+    display: flex;
+    flex-direction: column; /* Obrázek nahoře, text pod ním */
+    align-items: end; /* Obsah zarovnaný na střed */
+    padding: 1rem;
+}
+
+.image-right img {
+    max-width: 48%; /* Obrázek zabere maximální šířku kontejneru */
+    height: auto; /* Zachování proporcí obrázku */
+    margin-bottom: 1rem; /* Odstup mezi obrázkem a textem */
+}
+
+.text-right {
+    text-align: center; /* Text bude centrovaný */
+    color: #333; /* Barva textu */
+}
+
+/* Tato část může být přesunuta do global.css */
+button {
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50; /* Zelené tlačítko pro 'Odeslat poptávku' */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #45a049; /* Tmavší zelená na hover */
+}
+
+/* Případně obecný styl pro odkazy v tabulce může být v global.css */
+a {
+    text-decoration: none; /* Odstranění podtržení */
+    color: #007BFF; /* Modrá barva pro odkazy */
+}
+
+a:hover {
+    color: #0056b3; /* Tmavší modrá při najetí */
+}
+
+/* Responsivita pro menší obrazovky */
+@media (max-width: 48rem) {
+    .calculator-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .calculator, .info-right {
+        flex: none;
+        width: 100%;
+    }
+}

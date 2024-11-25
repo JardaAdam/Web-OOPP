@@ -46,6 +46,7 @@ async function handleLogin(event) {
 }
 
 
+
 // Kalkulator
 // Funkce pro aktualizaci celkové ceny na základě počtu kusů a cen jednotlivých položek
 function updateTotal() {

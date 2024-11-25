@@ -1,200 +1,24 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Hlavní stránka | Revize OOPP{% endblock %}
+{% block title %}Hlavní stránka{% endblock %}
 
 {% block content %}
 <body>
-    <!-- Hlavička stránky -->
 
 
 
     <!-- Hlavní obsah stránky -->
     <main>
+            <!-- Hlavička stránky -->
+<h1>Vitej na hlavni strance</h1>
         <div class="content-wrapper"> <!-- Kontejner pro hlavní obsah -->
 
-            <!-- Sekce pro Revize OOPP -->
-            <section class="revize">
-                <div class="image-left"> <!-- Obrázek pro Revize OOPP -->
-                    <img src="revize.jpg" alt="Revize OOPP"> <!-- Obrázek s popiskem -->
-                </div>
-                <div class="text-left"> <!-- Text pro Revize OOPP -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nulla esse perspiciatis sed sapiente, soluta repellendus aperiam omnis ut modi ab magni animi magnam distinctio, provident deserunt voluptatibus labore eligendi?</p>
-                </div>
-                <div class="calculator"> <!-- Kalkulačka pro výpočet ceny revize -->
-                    <h3>Počítadlo ceny za revizi OOPP</h3> <!-- Nadpis pro počítadlo -->
-                    <table id="calculatorTable"> <!-- Tabulka pro zadávání počtu položek -->
-                        <thead>
-                            <tr>
-                                <th>Položka</th>
-                                <th>Norma</th>
-                                <th>Cena</th>
-                                <th>Počet</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-1" target="_blank">Celotělový úvaz</a></td>
-                                <td>EN 361</td>
-                                <td><span class="price" id="price-1">0</span> Kč</td>
-                                <td><input type="number" name="count1" min="0" onchange="updateTotal()">ks</td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-2" target="_blank">Sedací úvaz</a></td>
-                                <td>EN 358</td>
-                                <td><span class="price" id="price-2">0</span> Kč</td>
-                                <td><input type="number" name="count2" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-3" target="_blank">Prsní úvaz</a></td>
-                                <td>EN 12277</td>
-                                <td><span class="price" id="price-3">0</span> Kč</td>
-                                <td><input type="number" name="count3" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-4" target="_blank">Zachycovač pádu</a></td>
-                                <td>EN 353</td>
-                                <td><span class="price" id="price-4">0</span> Kč</td>
-                                <td><input type="number" name="count4" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-5" target="_blank">Slanovací prostředek</a></td>
-                                <td>EN 341</td>
-                                <td><span class="price" id="price-5">0</span> Kč</td>
-                                <td><input type="number" name="count5" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-6" target="_blank">Helma</a></td>
-                                <td>EN 397</td>
-                                <td><span class="price" id="price-6">0</span> Kč</td>
-                                <td><input type="number" name="count6" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-7" target="_blank">Karabina, spojka</a></td>
-                                <td>EN 362</td>
-                                <td><span class="price" id="price-7">0</span> Kč</td>
-                                <td><input type="number" name="count7" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-8" target="_blank">Lano</a></td>
-                                <td>EN 1891</td>
-                                <td><span class="price" id="price-8">0</span> Kč</td>
-                                <td><input type="number" name="count8" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-9" target="_blank">Pracovní polohovací pás</a></td>
-                                <td>EN 358</td>
-                                <td><span class="price" id="price-9">0</span> Kč</td>
-                                <td><input type="number" name="count9" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-10" target="_blank">tlumič pádu</a></td>
-                                <td>EN 1621</td>
-                                <td><span class="price" id="price-10">0</span> Kč</td>
-                                <td><input type="number" name="count10" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-11" target="_blank">Absorpční tlumič</a></td>
-                                <td>EN 355</td>
-                                <td><span class="price" id="price-11">0</span> Kč</td>
-                                <td><input type="number" name="count11" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-12" target="_blank">Opaskový naviják</a></td>
-                                <td>EN 360</td>
-                                <td><span class="price" id="price-12">0</span> Kč</td>
-                                <td><input type="number" name="count12" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-13" target="_blank">Ochranné rukavice</a></td>
-                                <td>EN 388</td>
-                                <td><span class="price" id="price-13">0</span> Kč</td>
-                                <td><input type="number" name="count13" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-14" target="_blank">Ochranné brýle</a></td>
-                                <td>EN 166</td>
-                                <td><span class="price" id="price-14">0</span> Kč</td>
-                                <td><input type="number" name="count14" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-15" target="_blank">Ochranná obuv</a></td>
-                                <td>EN ISO 20345</td>
-                                <td><span class="price" id="price-15">0</span> Kč</td>
-                                <td><input type="number" name="count15" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-16" target="_blank">Respirátor</a></td>
-                                <td>EN 149</td>
-                                <td><span class="price" id="price-16">0</span> Kč</td>
-                                <td><input type="number" name="count16" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-17" target="_blank">Vysokozdvižný plošinový vozík</a></td>
-                                <td>EN 280</td>
-                                <td><span class="price" id="price-17">0</span> Kč</td>
-                                <td><input type="number" name="count17" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-18" target="_blank">Výtahové lano</a></td>
-                                <td>EN 12385</td>
-                                <td><span class="price" id="price-18">0</span> Kč</td>
-                                <td><input type="number" name="count18" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-19" target="_blank">Bezpečnostní helma</a></td>
-                                <td>EN 397</td>
-                                <td><span class="price" id="price-19">0</span> Kč</td>
-                                <td><input type="number" name="count19" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                            <tr>
-                                <td><a href="../../templates/items-info.html#item-20" target="_blank">Pevná příčka</a></td>
-                                <td>EN 13374</td>
-                                <td><span class="price" id="price-20">0</span> Kč</td>
-                                <td><input type="number" name="count20" min="0" onchange="updateTotal()"></td>
-                            </tr>
-                        </tbody>
-                        
-                        <tfoot>
-                            <tr>
-                                <td colspan="3"><strong>Celková cena:</strong></td>
-                                <td><strong id="totalPrice">0 Kč</strong></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <!-- Tlačítka pro výpočet ceny a odeslání poptávky -->
-                    <div class="buttons">
-                        <button id="submitRequest" onclick="submitRequest()">Odeslat poptávku</button>
-                        <button id="calculatePrice" onclick="updateTotal()">Vypočítat cenu</button>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Sekce pro Optimalizace pracovních postupů -->
-            <section class="optimalizace">
-                <div class="image-right"> <!-- Obrázek pro Optimalizace pracovních postupů -->
-                    <img src="optimalizace.jpg" alt="Optimalizace pracovních postupů"> <!-- Obrázek s popiskem -->
-                </div>
-                <div class="text-right"> <!-- Text pro Optimalizace pracovních postupů -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio impedit rem laboriosam repellat vitae.</p>
-                </div>
-                <div class="button-container">
-                    <!-- Tlačítka pro referenční stránku a konzultaci -->
-                    <button class="reference-button" onclick="window.open('references.html', '_blank')">Naše reference</button>
-                    <button class="consultation-button" onclick="window.open('consultation-form.html', '_blank')">Poptávka na konzultaci</button>
-                </div>
-                
-            </section>
+
         </div>
     </main>
 
-    <!-- Patička stránky -->
-    <footer>
-        <p>&copy; 2024 Revize OOPP</p> <!-- Copyright informace -->
-    </footer>
 
-    <!-- Skripty stránky -->
-    <script src="script.js"></script> <!-- Odkaz na externí JavaScript soubor -->
-    <script src="{% static 'js/scripts.js' %}"></script> <!-- Django statický odkaz -->
 </body>
 </html>
 {% endblock %}

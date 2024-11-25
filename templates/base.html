@@ -1,16 +1,18 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html {% if LANGUAGE_CODE %} lang="{{ LANGUAGE_CODE }}" {% else %} lang="en" {% endif %}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Revize OOPP{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/calkulator.css' %}">
 
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 
 </head>
 <body>
+
 <header>
     <div class="left-header">
         <h1>Revize OOPP</h1>
@@ -27,16 +29,18 @@
 </header>
 
 <!-- Navigační lišta -->
-<!-- Navigační lišta -->
 <nav class="navbar">
-    <ul class="navbar-nav">
+    <button class="navbar-toggler" id="navbarToggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <ul class="navbar-nav" id="navbarNav">
         <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Domů</a></li>
         <li class="nav-item"><a href="{% url 'revize' %}" class="nav-link">Revize OOPP</a></li>
-        <li class="nav-item"><a href="{% url 'optimalizace' %}" class="nav-link">Optimalizace pracovních postupů</a></li>
+        <li class="nav-item"><a href="{% url 'optimalizace' %}" class="nav-link">Optimalizace</a></li>
         <li class="nav-item"><a href="{% url 'kontakt' %}" class="nav-link">Kontakt</a></li>
     </ul>
 </nav>
-
 
 <main>
     {% block content %}{% endblock %}
@@ -45,5 +49,11 @@
 <footer>
     <p>&copy; 2024 Tvé jméno nebo firma. Všechna práva vyhrazena.</p>
 </footer>
+
+<!-- Skripty stránky -->
+<script src="{% static 'js/navbar.js' %}"></script> <!-- Odkaz na externí JS soubor -->
+<script>
+    console.log("JavaScript načten.");
+</script>
 </body>
 </html>

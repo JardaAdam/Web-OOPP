@@ -1,11 +1,3 @@
-/* Hlavní obsah */
-main {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 2rem; /* Padding pro hlavní obsah */
-}
-
 .content-wrapper {
     width: 100%;
     display: flex;
@@ -13,10 +5,10 @@ main {
 }
 
 /* Sekce pro revize a optimalizace */
-.revize, .optimalizace {
-    width: 48%;
-    margin-bottom: 2rem; /* Mezera mezi sekcemi */
-}
+/*.revize, .optimalizace {*/
+/*    width: 48%;*/
+/*    margin-bottom: 2rem; !* Mezera mezi sekcemi *!*/
+/*}*/
 
 .revize .image-left, .optimalizace .image-right {
     width: 100%;
@@ -33,127 +25,3 @@ main {
     font-size: 1rem; /* Velikost písma */
 }
 
-/* Kalkulačka */
-#calculatorTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem; /* Mezera nad kalkulačkou */
-}
-
-#calculatorTable th, #calculatorTable td {
-    border: 1px solid #ccc;
-    padding: 1rem; /* Padding pro buňky */
-    text-align: center;
-}
-
-.price, #totalPrice {
-    font-weight: bold;
-}
-
-/* Kalkulátor - Úprava pro počet */
-#calculatorTable input[type="number"] {
-    width: 70%; /* Omezíme šířku pole pro zadávání počtu na 70% */
-    max-width: 5rem; /* Max. šířka pole (5 znaků) */
-    padding: 0.5rem; /* Okraje uvnitř pole */
-    margin-right: 0.5rem; /* Mezera mezi polem a zkratkou "ks" */
-}
-
-#calculatorTable td .unit {
-    display: inline-block;
-    width: 20%; /* Zkratka "ks" zabírá 20% šířky */
-    text-align: left;
-    padding-left: 0.5rem; /* Mezera vlevo od zkratky */
-    font-weight: bold;
-    color: #333;
-}
-
-/* Styl pro odkazy v tabulce */
-#calculatorTable a {
-    color: blue;
-    text-decoration: none;
-}
-
-#calculatorTable a:hover {
-    text-decoration: underline;
-    color: darkblue;
-}
-
-
-
-/* Tlačítka */
-.buttons {
-    display: flex; /* Používáme Flexbox pro umístění tlačítek vedle sebe */
-    justify-content: space-between; /* Mezera mezi tlačítky */
-    margin-top: 2rem; /* Mezera nad tlačítky */
-}
-
-.buttons button {
-    padding: 0.625rem 1.25rem; /* Vnitřní okraje tlačítek */
-    font-size: 1rem; /* Velikost písma */
-    cursor: pointer; /* Kurzory na tlačítkách */
-    border-radius: 0.3125rem; /* Zaoblené rohy tlačítek */
-    transition: background-color 0.3s, border-color 0.3s; /* Plynulý přechod pro barvy */
-}
-
-#submitRequest { /* Specifický styl pro tlačítko "Odeslat poptávku" */
-    background-color: #28a745; /* Zelená barva pro tlačítko */
-    border: 0.125rem solid #28a745; /* Zelené okraje */
-    color: white; /* Barva textu bílá */
-}
-
-#submitRequest:hover {
-    background-color: #218838; /* Tmavší zelená při najetí */
-    border-color: #1e7e34; /* Tmavší zelené okraje */
-}
-
-#submitRequest:active {
-    background-color: #1c7430; /* Ještě tmavší zelená při stisku */
-}
-
-#calculatePrice { /* Specifický styl pro tlačítko "Vypočítat cenu" */
-    background-color: #007bff; /* Modrá barva pro tlačítko */
-    border: 0.125rem solid #007bff; /* Modré okraje */
-    color: white; /* Barva textu bílá */
-}
-
-#calculatePrice:hover {
-    background-color: #0056b3; /* Tmavší modrá při najetí */
-    border-color: #004085; /* Tmavší okraje při najetí */
-}
-
-#calculatePrice:active {
-    background-color: #003366; /* Ještě tmavší modrá při stisku */
-}
-
-/* Tlačítka pro optimalizace */
-.button-container {
-    display: flex; /* Uspořádá tlačítka do řady vedle sebe */
-    justify-content: center; /* Vycentruje tlačítka */
-    gap: 1rem; /* Přidá mezeru mezi tlačítky */
-    margin-top: 1.5rem; /* Přidá prostor nad tlačítky */
-}
-
-.reference-button, .consultation-button {
-    padding: 0.5rem 1.5rem; /* Vnitřní odsazení pro větší tlačítka */
-    color: #ffffff; /* Bílý text */
-    border: none; /* Odstraní rámeček */
-    border-radius: 5px; /* Zakulacení rohů */
-    cursor: pointer; /* Změna kurzoru při najetí na tlačítko */
-    font-size: 1rem; /* Nastaví velikost textu */
-}
-
-.reference-button {
-    background-color: #28a745; /* Zelené pozadí pro tlačítko Naše reference */
-}
-
-.reference-button:hover {
-    background-color: #218838; /* Tmavší zelená při najetí myší */
-}
-
-.consultation-button {
-    background-color: #0073e6; /* Modré pozadí pro tlačítko Poptávka na konzultaci */
-}
-
-.consultation-button:hover {
-    background-color: #005bb5; /* Tmavší modrá při najetí myší */
-}

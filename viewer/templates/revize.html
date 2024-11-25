@@ -1,8 +1,127 @@
 {% extends 'base.html' %}
-
-{% block title %}Domů{% endblock %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/calkulator.css' %}">
+{% endblock %}
+{% block title %}Revize{% endblock %}
 
 {% block content %}
-<h1>Vítejte na stránce!</h1>
-<p>Obsah stránky Domů...</p>
+<h1>Vítejte na stránce Revize!</h1>
+<section class="revize">
+    <div class="revize-container">
+        <!-- Kalkulačka vlevo -->
+        <div class="calculator">
+            <h3>Počítadlo ceny za revizi OOPP</h3>
+            <table id="calculatorTable">
+                <thead>
+                    <tr>
+                        <th>Položka</th>
+                        <th>Norma</th>
+                        <th>Cena</th>
+                        <th>Počet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-1' %}" target="_blank">Celotělový úvaz</a></td>
+                        <td>EN 361</td>
+                        <td><span class="price" id="price-1">200</span> Kč</td>
+                        <td><input type="number" name="count1" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-2' %}" target="_blank">Arboristický úvaz</a></td>
+                        <td>EN 358</td>
+                        <td><span class="price" id="price-2">300</span> Kč</td>
+                        <td><input type="number" name="count2" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-3' %}" target="_blank">Lezecký úvaz</a></td>
+                        <td>EN 12277</td>
+                        <td><span class="price" id="price-3">180</span> Kč</td>
+                        <td><input type="number" name="count3" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-4' %}" target="_blank">Helma</a></td>
+                        <td>EN 12492</td>
+                        <td><span class="price" id="price-4">150</span> Kč</td>
+                        <td><input type="number" name="count4" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-5' %}" target="_blank">Arboristická helma</a></td>
+                        <td>EN 397</td>
+                        <td><span class="price" id="price-5">250</span> Kč</td>
+                        <td><input type="number" name="count5" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-6' %}" target="_blank">Slaňovací brzda běžná</a></td>
+                        <td>EN 15151</td>
+                        <td><span class="price" id="price-6">500</span> Kč</td>
+                        <td><input type="number" name="count6" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-7' %}" target="_blank">Slaňovací brzda antipanic</a></td>
+                        <td>EN 12841</td>
+                        <td><span class="price" id="price-7">600</span> Kč</td>
+                        <td><input type="number" name="count7" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-8' %}" target="_blank">Slaňovací brzda speciální</a></td>
+                        <td>EN 15151</td>
+                        <td><span class="price" id="price-8">750</span> Kč</td>
+                        <td><input type="number" name="count8" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-9' %}" target="_blank">Tlumič pádu 'I'</a></td>
+                        <td>EN 354</td>
+                        <td><span class="price" id="price-9">400</span> Kč</td>
+                        <td><input type="number" name="count9" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-10' %}" target="_blank">Tlumič pádu 'Y'</a></td>
+                        <td>EN 355</td>
+                        <td><span class="price" id="price-10">450</span> Kč</td>
+                        <td><input type="number" name="count10" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-11' %}" target="_blank">Zachycovač pádu jednoduchý</a></td>
+                        <td>EN 360</td>
+                        <td><span class="price" id="price-11">500</span> Kč</td>
+                        <td><input type="number" name="count11" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-12' %}" target="_blank">Zachycovač pádu složitý</a></td>
+                        <td>EN 360</td>
+                        <td><span class="price" id="price-12">600</span> Kč</td>
+                        <td><input type="number" name="count12" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                    <tr>
+                        <td><a href="{% static 'items-info.html#item-13' %}" target="_blank">Kladka</a></td>
+                        <td>EN 12278</td>
+                        <td><span class="price" id="price-13">350</span> Kč</td>
+                        <td><input type="number" name="count13" min="0" onchange="updateTotal()"> ks</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"><strong>Celková cena:</strong></td>
+                        <td><strong id="totalPrice">0 Kč</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="buttons">
+                <button id="submitRequest" onclick="submitRequest()">Odeslat poptávku</button>
+                <button id="calculatePrice" onclick="updateTotal()">Vypočítat cenu</button>
+            </div>
+        </div>
+        <!-- Obrázek a text vpravo -->
+        <div class="info-right">
+            <div class="image-right">
+                <img src="{% static 'images/revize.jpg' %}" alt="Ukázka revize OOPP">
+            </div>
+            <div class="text-right">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nulla esse perspiciatis sed sapiente, soluta repellendus aperiam omnis ut modi ab magni animi magnam distinctio, provident deserunt voluptatibus labore eligendi?</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

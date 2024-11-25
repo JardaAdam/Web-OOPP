@@ -5,124 +5,137 @@
     box-sizing: border-box;
 }
 
-/* Styl pro tělo stránky */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    margin-top: 120px; /* Umožní zobrazit navbar nad obsahem */
+    padding-top: 0; /* Odsazení odstraněno – vyřešeno pomocí sticky navbaru */
+}
+
+/* Hlavní obsah */
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem; /* Padding pro hlavní obsah */
 }
 
 /* Styl pro hlavičku */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Vytváří prostor mezi levým, středním a pravým blokem */
     align-items: center;
     padding: 1.25rem;
     background-color: #5722ac;
-    background-image: url('path_to_your_image.jpg');
     background-size: cover;
     background-position: center center;
     box-shadow: 0 0.125rem 0.3125rem rgba(107, 26, 26, 0.1);
-    position: relative; /* Pro zajištění správného umístění při použití fixed navbar */
 }
 
-/* Flexbox pro obsah hlavičky */
-header .left-header, header .center-header, header .right-header {
+header .left-header,
+header .center-header,
+header .right-header {
     flex: 1;
     text-align: center;
+}
+
+header .center-header {
+    color: #28a745;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #007bff;
 }
 
 /* Pravá část hlavičky pro přihlášení a registraci */
 header .right-header {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
+    flex-direction: column; /* Tlačítka budou pod sebou */
+    align-items: flex-end; /* Zarovná tlačítka doprava */
+    gap: 1rem; /* Mezery mezi tlačítky */
 }
 
-/* Navbar */
-.navbar {
-    background-color: #5722ac; /* Změněno na konzistentní barvu s hlavičkou */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1050;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Stín pro lepší vzhled */
-    padding: 0.5rem 0;  /* Padding pro více prostoru */
-}
-
-/* Flexbox pro položky v navbaru */
-.navbar-nav {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-/* Individuální položky v navbaru */
-.navbar-nav .nav-item {
-    margin: 0 1rem;
-}
-
-.nav-item .nav-link {
-    text-decoration: none;
-    color: #ffffff; /* Bílý text pro lepší kontrast */
-    padding: 0.5rem 1rem;
-    display: block;
+header button {
+    padding: 0.625rem;
+    margin: 0.3125rem;
+    border: none;
+    cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s; /* Efekty pro hover */
-}
-.navbar-nav .nav-item .nav-link {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #5722ac;
-    text-align: center;
+    width: 60%; /* Zvýšení šířky tlačítek pro lepší vzhled */
+    transition: background-color 0.3s ease;
 }
 
-/* Hover efekt pro položky v navbaru */
-.nav-item .nav-link:hover {
-    background-color: #0056b3;  /* Změna barvy na hover */
-    color: #fff;
+header #login-btn {
+    background-color: #007bff;
+    color: white;
 }
 
-/* Aktivní stav položky */
-.nav-item .nav-link.active {
+header #login-btn:hover {
+    background-color: #0056b3;
+}
+
+header #register-btn {
     background-color: #28a745;
     color: white;
 }
 
-/* Responzivní navbar pro mobilní zařízení */
-@media (max-width: 768px) {
-    .navbar-nav {
-        flex-direction: column;  /* Zobrazení položek ve sloupci na menších obrazovkách */
-        align-items: center;
-        width: 100%;
-    }
-
-    .navbar-nav .nav-item {
-        margin: 0.5rem 0;  /* Větší mezery mezi položkami */
-    }
-
-    .navbar-toggler {
-        border: none;
-        background-color: transparent;
-    }
-
-    .navbar-toggler-icon {
-        background-color: #fff;
-    }
+header #register-btn:hover {
+    background-color: #218838;
 }
 
-/* Responzivní úpravy pro header */
+/* Responzivní design pro mobilní zařízení */
 @media (max-width: 48rem) {
     header {
         flex-direction: column;
         align-items: center;
     }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .image-right img {
+        width: 100%; /* Obrázek zabere celou šířku sekce */
+        height: auto;
+        margin-bottom: 1rem; /* Mezera mezi obrázkem a kalkulačkou */
+    }
+
+    #calculatorTable input[type="number"] {
+        width: 100%; /* Pole na celou šířku */
+        max-width: none; /* Zrušení max. šířky pole */
+    }
+
+    #calculatorTable td .unit {
+        display: block; /* Jednotky pod polem místo vedle něj */
+        margin-top: 0.5rem;
+    }
+
+    .calculator-section {
+        flex-direction: column; /* Kalkulačka a její prvky pod sebou */
+    }
+
+    .flex-section {
+        flex-direction: column; /* Prvky pod sebou místo vedle sebe */
+    }
+}
+
+@media (min-width: 48rem) and (max-width: 64rem) {
+    header .right-header {
+        flex-direction: row; /* tlačítka vedle sebe pro tablety a větší obrazovky */
+        align-items: center;
+    }
+
+    header button {
+        width: 40%; /* Snížení šířky tlačítek pro lepší vzhled na větších obrazovkách */
+    }
+}
+
+/* Patička */
+footer {
+    text-align: center;
+    padding: 0.625rem;
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
 }
